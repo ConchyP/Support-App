@@ -8,7 +8,7 @@
   
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top w-100">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">SUPPORT APP</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -26,14 +26,14 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <router-link class="nav-link" to="/Solicitud">Solicitudes</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <router-link class="nav-link" to="/About">About</router-link>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>

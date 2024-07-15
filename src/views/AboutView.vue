@@ -1,15 +1,22 @@
+<script>
+
+</script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <main>
+    <NavBar />
+
+    <body>
+
+    <img src="../assets/icons/herramientas_24908-54114.jpg ">
+
+    </body>
+
+  </main>
+
+
 </template>
 
-<style lang="scss" scoped>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+<style scoped>
+
 </style>

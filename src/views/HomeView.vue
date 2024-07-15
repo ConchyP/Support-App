@@ -13,7 +13,7 @@ import NavBar from '../components/NavBar.vue'
 
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
 
