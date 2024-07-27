@@ -3,6 +3,7 @@
 import NavBar from './components/NavBar.vue';
 import Footer from './components/Footer.vue';
 import { RouterLink, RouterView } from 'vue-router'
+import QueriesList from './components/QueriesList.vue';
 
 
 </script>
@@ -12,6 +13,7 @@ import { RouterLink, RouterView } from 'vue-router'
     <NavBar />
     <router-view />
   </div>
+
 
 <main>
 

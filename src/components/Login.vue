@@ -22,7 +22,8 @@
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+
 body {
     margin: 0;
     padding: 0;
