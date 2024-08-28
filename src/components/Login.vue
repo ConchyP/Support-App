@@ -1,29 +1,38 @@
 <script setup>
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+
+const username = ref('');
+const password = ref('');
+const router = useRouter();
+
+const login = () => {
+    if (username.value === "Conchy" && password.value === "12345") {
+        router.push("/NewRequest");
+    } else {
+        alert("Invalid username or password");
+    }
+}
 </script>
 
 <template>
 
     <div class="loginBox"> <img class="user" src="https://i.ibb.co/yVGxFPR/2.png" height="100px" width="100px">
         <h3>SIGN IN HERE</h3>
-        <form action="login" method="post">
-            <div class="inputBox"> <input id="uname" type="text" name="Username" placeholder="Username"> <input
-                    id="pass" type="password" name="Password" placeholder="Password"> </div> <input type="submit"
-                name="" value="Login">
+        <form @submit.prevent="login">
+            <div class="inputBox">
+                <input id="uname" type="text" v-model="username" placeholder="Username" required>
+                <input id="pass" type="password" v-model="password" placeholder="Password" required>
+            </div>
+            <input type="submit" value="Login">
         </form>
-        <a href="#">Forget Password<br> </a>
-        <div class="text-center">
-            <p style="color: #59238F;">Sign-Up</p>
-        </div>
-
     </div>
-
 
 
 </template>
 
 <style lang="scss" scoped>
-
 body {
     margin: 0;
     padding: 0;
@@ -47,13 +56,13 @@ body {
 }
 
 .loginBox {
-    margin-top: 2%;
+    margin-top: 5%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 350px;
-    min-height: 200px;
+    min-height: 150px;
     background: #000000;
     border-radius: 10px;
     padding: 40px;

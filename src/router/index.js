@@ -1,32 +1,40 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Login from "@/components/Login.vue";
-import QueriesList from "@/components/QueriesList.vue";
-import NewQueryView from "@/views/NewQueryView.vue";
-import QueryEdit from "@/components/QueryEdit.vue";
+
+
+import NewRequestView from "@/views/NewRequestView.vue";
+import HomeView from "@/views/HomeView.vue";
+import RequestListView from "@/views/RequestListView.vue";
+import LoginView from "@/views/LoginView.vue";
+import RequestEditView from "@/views/RequestEditView.vue";
 
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/login",
+      path: "/",
       name: "login",
-      component: Login,
+      component: LoginView,
     },
     {
-      path: "/newQuery",
-      name: "newQuery",
-      component: NewQueryView,
+      path: "/home",
+      name: "Home",
+      component: HomeView,
     },
     {
-      path: "/queriesList",
-      name: "queriesList",
-      component: QueriesList
+      path: "/newRequest",
+      name: "newRequest",
+      component: NewRequestView,
     },
     {
-      path: "/queryEdit",
-      name: "queryEdit",
-      component: QueryEdit
+      path: "/requestList",
+      name: "requestList",
+      component: RequestListView
+    },
+    {
+      path: "/requestEdit",
+      name: "requestEdit",
+      component: RequestEditView
     },
   ],
 });

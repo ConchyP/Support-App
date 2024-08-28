@@ -2,15 +2,14 @@
  import { ref } from 'vue';
  
  const form = ref({
-   requestDate: '',
-   firstName: '',
-   lastName: '',
-   requestTitle: '',
-   requestDetails: ''
+   dateRequest: '',
+   Name: '',
+   typeRequest: '',
+   description: ''
  });
  
  const submitForm = () => {
-   console.log('Formulario enviado:', form.value);
+   console.log('Submitted form:', form.value);
  };
  </script>
  
@@ -72,7 +71,7 @@
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
-   width: 500px; /* Ancho de la caja más grande */
+   width: 500px; 
    min-height: 400px;
    background: #000000;
    border-radius: 10px;
@@ -101,8 +100,8 @@
    background: none;
    border: none;
    outline: none;
-   border-bottom: 2px solid #262626; /* Igualar estilo del borde al login */
-   font-size: 16px; /* Igualar tamaño de fuente al login */
+   border-bottom: 2px solid #262626; 
+   font-size: 16px; 
    color: #fff;
    padding-left: 20px;
    box-sizing: border-box;
@@ -118,20 +117,20 @@
  }
  
  .textarea-box {
-   background-color: #fff; /* Fondo blanco para el textarea */
-   color: #000; /* Texto negro para el textarea */
-   height: 120px; /* Aumentar la altura del textarea */
-   padding-left: 20px; /* Igualar el padding al input */
-   border: 2px solid #262626; /* Añadir borde para consistencia */
-   box-shadow: none; /* Eliminar sombreado */
+   background-color: #fff; 
+   color: #000;
+   height: 120px; 
+   padding-left: 20px; 
+   border: 2px solid #262626; 
+   box-shadow: none; 
  }
  
  .btn-primary {
    border: none;
    outline: none;
-   height: 40px; /* Reducir altura del botón */
-   font-size: 16px; /* Igualar tamaño de fuente al botón de login */
-   background: #59238F; /* Mismo color de fondo que el login */
+   height: 40px; 
+   font-size: 16px;
+   background: #59238F; 
    color: #fff;
    border-radius: 20px;
    cursor: pointer;

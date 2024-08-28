@@ -1,39 +1,54 @@
 <script setup>
- import { ref } from 'vue';
- 
- const form = ref({
-   requestDate: '',
-   firstName: '',
-   lastName: '',
-   requestTitle: '',
-   requestDetails: ''
- });
- 
- const submitForm = () => {
-   console.log('Formulario enviado:', form.value);
- };
 
-</script>
+import { ref } from 'vue';
+// import { useFormStore } from '../stores/useFormStore'; 
 
+// const formStore = useFormStore();
+const form = ref({
+  DateRequest: '',
+  Name: '',
+  TypeRequest: '',
+  Description: ''
+});
+
+const submitForm = async () => {
+  try {
+    const response = await fetch('http://localhost:8080/api/v1/requests', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form.value)
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
+    console.log('Request sent:', data);
+   
+  } catch (error) {
+    console.error('Error sending request:', error);
+
+  }
+};
+
+</script> 
 <template>
-
   <div class="consultaBox">
     <img class="user" src="../assets/icons/ConTech.png" height="200px" width="200px" alt="Consulta Image">
-    <h3>NEW QUERY</h3>
-    <form action="login" method="post">
+    <h3>NEW REQUEST</h3>
+    <form @submit.prevent="submitForm">
       <div class="inputBox">
-        <input id="requestDate" type="date" v-model="form.requestDate" placeholder="Request Date" class="inputbox"
-          required>
+        <input id="DateRequest" type="date" v-model="form.DateRequest" placeholder="request Date" class="inputbox" required>
       </div>
       <div class="inputBox">
-        <input id="firstName" type="text" v-model="form.firstName" placeholder="First Name" class="inputbox" required>
+        <input id="Name" type="text" v-model="form.Name" placeholder="Name" class="inputbox" required>
       </div>
       <div class="inputBox">
-        <input id="lastName" type="text" v-model="form.lastName" placeholder="Last Name" class="inputbox" required>
-      </div>
-      <div class="inputBox">
-        <select id="requestTitle" v-model="form.requestTitle" class="inputbox" required>
-          <option value="" disabled selected>Choose an option</option>
+        <select id="TypeRequest" v-model="form.TypeRequest" class="inputbox" required>
+          <option value="" disabled>Choose an option</option>
           <option value="Connection issues">Connection issues</option>
           <option value="peripheral failure">Peripherals failure</option>
           <option value="password error">Password error</option>
@@ -42,8 +57,7 @@
         </select>
       </div>
       <div class="inputBox">
-        <textarea id="requestDetails" v-model="form.requestDetails" placeholder="Write your request here"
-          maxlength="2000" class="textarea-box" required></textarea>
+        <textarea id="Description" v-model="form.Description" placeholder="Write your request here" maxlength="2000" class="textarea-box" required></textarea>
       </div>
       <div class="text-center">
         <input type="submit" value="Submit" class="btn-primary">
@@ -51,6 +65,8 @@
     </form>
   </div>
 </template>
+
+
 
 <style lang="scss" scoped>
 body {
@@ -72,7 +88,7 @@ body {
 }
 
 .consultaBox {
-  margin-top: 1%;
+  margin-top: 15%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -166,4 +182,4 @@ h3 {
     padding: 40px 15px 15px 15px;
   }
 }
-</style>
+</style> 

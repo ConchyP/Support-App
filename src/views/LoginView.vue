@@ -7,10 +7,16 @@ import Login from '@/components/Login.vue';
 
     <main>
 
-        <Login />
+        <body>
+
+            <Login />
+
+        </body>
 
     </main>
 
 </template>
 
-<style lang="scss" scoped></style>
+<style scoped>
+
+</style>

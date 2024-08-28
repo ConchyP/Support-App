@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4 text-md-left text-center mb-2 mb-md-0">
-          &copy; 2024 Your Company
+          &copy; 2024 ConTech
         </div>
         <div class="col-md-4 text-center mb-2 mb-md-0">
           <img src="../assets/icons/herramientas_24908-54114.jpg" alt="Your Image" class="img-fluid" style="max-height: 50px;">
@@ -26,23 +26,16 @@
 
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 
-html, body {
-            height: 100%;
-            margin: 0;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        .content {
-            flex: 1;
-        }
+
         footer {
-            background-color: #343a40;
+            background-color: #292d31;
             color: white;
-            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+            width: 100%;
         }
 
 </style>
